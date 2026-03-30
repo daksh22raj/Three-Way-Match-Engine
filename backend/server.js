@@ -28,7 +28,7 @@ if (isProduction) {
   if (existsSync(frontendBuild)) {
     app.use(express.static(frontendBuild));
     // Catch-all: return React app for any non-API route
-    app.get('*', (req, res) => {
+    app.get('/*splat', (req, res) => {
       res.sendFile(join(frontendBuild, 'index.html'));
     });
   }
