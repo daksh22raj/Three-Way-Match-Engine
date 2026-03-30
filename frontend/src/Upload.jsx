@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { UploadCloud, CheckCircle, AlertCircle, FileText } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+
 const Upload = ({ onUploadSuccess }) => {
   const [file, setFile] = useState(null);
   const [documentType, setDocumentType] = useState('po');
@@ -30,7 +33,7 @@ const Upload = ({ onUploadSuccess }) => {
     formData.append('documentType', documentType);
 
     try {
-      const res = await axios.post('http://localhost:5000/documents/upload', formData, {
+      const res = await axios.post(`${API_URL}/documents/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       setSuccess(true);

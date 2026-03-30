@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Search, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+
 const MatchResult = ({ prefillPo }) => {
   const [poNumber, setPoNumber] = useState(prefillPo || '');
   const [loading, setLoading] = useState(false);
@@ -20,7 +23,7 @@ const MatchResult = ({ prefillPo }) => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get(`http://localhost:5000/match/${searchPo}`);
+      const res = await axios.get(`${API_URL}/match/${searchPo}`);
       setResult(res.data);
     } catch (err) {
       console.error(err);
