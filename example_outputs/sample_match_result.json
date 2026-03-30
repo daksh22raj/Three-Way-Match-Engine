@@ -1,0 +1,46 @@
+{
+  "status": "mismatch",
+  "reasons": [
+    "grn_qty_exceeds_po_qty_for_item_A123",
+    "invoice_date_after_po_date"
+  ],
+  "documents": [
+    {
+      "documentType": "po",
+      "poNumber": "PO-1004",
+      "poDate": "2026-03-24T00:00:00.000Z",
+      "vendorName": "Acme Corp",
+      "items": [
+        {
+          "itemCode": "A123",
+          "description": "Widget",
+          "quantity": 100
+        }
+      ]
+    },
+    {
+      "documentType": "grn",
+      "poNumber": "PO-1004",
+      "grnDate": "2026-03-25T00:00:00.000Z",
+      "items": [
+        {
+          "itemCode": "A123",
+          "description": "Widget",
+          "receivedQuantity": 105
+        }
+      ]
+    },
+    {
+      "documentType": "invoice",
+      "poNumber": "PO-1004",
+      "invoiceDate": "2026-03-26T00:00:00.000Z",
+      "items": [
+        {
+          "itemCode": "A123",
+          "description": "Widget",
+          "quantity": 100
+        }
+      ]
+    }
+  ]
+}

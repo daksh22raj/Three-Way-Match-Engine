@@ -1,0 +1,19 @@
+{
+  "poNumber": "PO-9952",
+  "poDate": "2026-03-10T00:00:00.000Z",
+  "vendorName": "Global Supplies LLC",
+  "items": [
+    {
+      "itemCode": "ITM-001",
+      "sku": "GS-001",
+      "description": "Industrial Steel Pipe 10ft",
+      "quantity": 500
+    },
+    {
+      "itemCode": "ITM-002",
+      "sku": "GS-002",
+      "description": "Heavy Duty Valve",
+      "quantity": 50
+    }
+  ]
+}
